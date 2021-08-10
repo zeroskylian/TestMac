@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632195082694589C007B1FFB /* MTScreenCaptureModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 632195042694589C007B1FFB /* MTScreenCaptureModule.m */; };
+		632195092694589C007B1FFB /* CaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 632195052694589C007B1FFB /* CaptureView.m */; };
+		6321950A2694589C007B1FFB /* BackgroudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 632195062694589C007B1FFB /* BackgroudView.m */; };
+		6321950B2694589C007B1FFB /* CaptureWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 632195072694589C007B1FFB /* CaptureWindow.m */; };
+		634CDF1326A2B5CE00D522DA /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CDF1226A2B5CE00D522DA /* NSImageExtensions.swift */; };
+		634CDF1526A2B5E100D522DA /* HLImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CDF1426A2B5E100D522DA /* HLImageProcessor.swift */; };
+		6358F23126B1093C00DDF076 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358F23026B1093C00DDF076 /* TestTextView.swift */; };
+		63705437269539F00060F6B4 /* DDWindowAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63705436269539F00060F6B4 /* DDWindowAdditions.m */; };
+		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
 		63AD9C81268F16D900B6B6E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD9C80268F16D900B6B6E8 /* AppDelegate.swift */; };
 		63AD9C83268F16D900B6B6E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD9C82268F16D900B6B6E8 /* ViewController.swift */; };
 		63AD9C85268F16DA00B6B6E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63AD9C84268F16DA00B6B6E8 /* Assets.xcassets */; };
 		63AD9C88268F16DA00B6B6E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AD9C86268F16DA00B6B6E8 /* Main.storyboard */; };
+		63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7441626C20B6000DAA0B1 /* NSLabel.swift */; };
+		6BB918D2B9A975B61F4934A7 /* libPods-TestMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7D3857C834ED7F205C6E92 /* Pods-TestMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMac.release.xcconfig"; path = "Target Support Files/Pods-TestMac/Pods-TestMac.release.xcconfig"; sourceTree = "<group>"; };
+		47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		632195002694589C007B1FFB /* MTScreenCaptureModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScreenCaptureModule.h; sourceTree = "<group>"; };
+		632195012694589C007B1FFB /* BackgroudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroudView.h; sourceTree = "<group>"; };
+		632195022694589C007B1FFB /* CaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureView.h; sourceTree = "<group>"; };
+		632195032694589C007B1FFB /* CaptureWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureWindow.h; sourceTree = "<group>"; };
+		632195042694589C007B1FFB /* MTScreenCaptureModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScreenCaptureModule.m; sourceTree = "<group>"; };
+		632195052694589C007B1FFB /* CaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureView.m; sourceTree = "<group>"; };
+		632195062694589C007B1FFB /* BackgroudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroudView.m; sourceTree = "<group>"; };
+		632195072694589C007B1FFB /* CaptureWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureWindow.m; sourceTree = "<group>"; };
+		634CDF1226A2B5CE00D522DA /* NSImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
+		634CDF1426A2B5E100D522DA /* HLImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLImageProcessor.swift; sourceTree = "<group>"; };
+		6358F23026B1093C00DDF076 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
+		63705435269539F00060F6B4 /* DDWindowAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDWindowAdditions.h; sourceTree = "<group>"; };
+		63705436269539F00060F6B4 /* DDWindowAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDWindowAdditions.m; sourceTree = "<group>"; };
+		6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		63AD9C7D268F16D900B6B6E8 /* TestMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AD9C80268F16D900B6B6E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63AD9C82268F16D900B6B6E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +48,8 @@
 		63AD9C87268F16DA00B6B6E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63AD9C89268F16DA00B6B6E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63AD9C8A268F16DA00B6B6E8 /* TestMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestMac.entitlements; sourceTree = "<group>"; };
+		63B7441626C20B6000DAA0B1 /* NSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
+		8BCDC034CCE9EC6F2EF36DFD /* Pods-TestMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMac.debug.xcconfig"; path = "Target Support Files/Pods-TestMac/Pods-TestMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +57,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB918D2B9A975B61F4934A7 /* libPods-TestMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CE2091E6A62A36DBE8E2D92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BCDC034CCE9EC6F2EF36DFD /* Pods-TestMac.debug.xcconfig */,
+				3A7D3857C834ED7F205C6E92 /* Pods-TestMac.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		41472234338650D8531BDA81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		632194FF2694589C007B1FFB /* ScreenCapture */ = {
+			isa = PBXGroup;
+			children = (
+				632195012694589C007B1FFB /* BackgroudView.h */,
+				632195062694589C007B1FFB /* BackgroudView.m */,
+				632195022694589C007B1FFB /* CaptureView.h */,
+				632195052694589C007B1FFB /* CaptureView.m */,
+				632195032694589C007B1FFB /* CaptureWindow.h */,
+				632195072694589C007B1FFB /* CaptureWindow.m */,
+				63705435269539F00060F6B4 /* DDWindowAdditions.h */,
+				63705436269539F00060F6B4 /* DDWindowAdditions.m */,
+				632195002694589C007B1FFB /* MTScreenCaptureModule.h */,
+				632195042694589C007B1FFB /* MTScreenCaptureModule.m */,
+			);
+			path = ScreenCapture;
+			sourceTree = "<group>";
+		};
 		63AD9C74268F16D900B6B6E8 = {
 			isa = PBXGroup;
 			children = (
 				63AD9C7F268F16D900B6B6E8 /* TestMac */,
 				63AD9C7E268F16D900B6B6E8 /* Products */,
+				2CE2091E6A62A36DBE8E2D92 /* Pods */,
+				41472234338650D8531BDA81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,12 +119,18 @@
 		63AD9C7F268F16D900B6B6E8 /* TestMac */ = {
 			isa = PBXGroup;
 			children = (
+				632194FF2694589C007B1FFB /* ScreenCapture */,
 				63AD9C80268F16D900B6B6E8 /* AppDelegate.swift */,
 				63AD9C82268F16D900B6B6E8 /* ViewController.swift */,
+				6358F23026B1093C00DDF076 /* TestTextView.swift */,
+				6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */,
+				63B7441626C20B6000DAA0B1 /* NSLabel.swift */,
 				63AD9C84268F16DA00B6B6E8 /* Assets.xcassets */,
 				63AD9C86268F16DA00B6B6E8 /* Main.storyboard */,
 				63AD9C89268F16DA00B6B6E8 /* Info.plist */,
 				63AD9C8A268F16DA00B6B6E8 /* TestMac.entitlements */,
+				634CDF1226A2B5CE00D522DA /* NSImageExtensions.swift */,
+				634CDF1426A2B5E100D522DA /* HLImageProcessor.swift */,
 			);
 			path = TestMac;
 			sourceTree = "<group>";
@@ -70,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63AD9C8D268F16DA00B6B6E8 /* Build configuration list for PBXNativeTarget "TestMac" */;
 			buildPhases = (
+				D875F667CD51AF12368DBC72 /* [CP] Check Pods Manifest.lock */,
 				63AD9C79268F16D900B6B6E8 /* Sources */,
 				63AD9C7A268F16D900B6B6E8 /* Frameworks */,
 				63AD9C7B268F16D900B6B6E8 /* Resources */,
@@ -127,13 +200,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D875F667CD51AF12368DBC72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63AD9C79268F16D900B6B6E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634CDF1526A2B5E100D522DA /* HLImageProcessor.swift in Sources */,
+				6321950A2694589C007B1FFB /* BackgroudView.m in Sources */,
+				634CDF1326A2B5CE00D522DA /* NSImageExtensions.swift in Sources */,
+				632195082694589C007B1FFB /* MTScreenCaptureModule.m in Sources */,
+				6358F23126B1093C00DDF076 /* TestTextView.swift in Sources */,
+				63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */,
+				6321950B2694589C007B1FFB /* CaptureWindow.m in Sources */,
 				63AD9C83268F16D900B6B6E8 /* ViewController.swift in Sources */,
 				63AD9C81268F16D900B6B6E8 /* AppDelegate.swift in Sources */,
+				63705437269539F00060F6B4 /* DDWindowAdditions.m in Sources */,
+				6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */,
+				632195092694589C007B1FFB /* CaptureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +376,12 @@
 		};
 		63AD9C8E268F16DA00B6B6E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BCDC034CCE9EC6F2EF36DFD /* Pods-TestMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestMac/TestMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R9H33JX4W4;
@@ -283,16 +393,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengli.TestMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestMac/TestMac-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		63AD9C8F268F16DA00B6B6E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A7D3857C834ED7F205C6E92 /* Pods-TestMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestMac/TestMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R9H33JX4W4;
@@ -304,6 +417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengli.TestMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestMac/TestMac-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
