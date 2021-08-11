@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -689,6 +690,20 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="E9F704D9-0D56-4CD7-B0E1-E2F2C5EB4580" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="upp-ms-6lL">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="FLr-LX-sUZ"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="bzQ-T5-5jH"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Ulv-Ny-lSm"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="uKs-V2-muq"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="WWZ-Ta-8ph"/>
+                                <toolbarItem implicitItemIdentifier="D25C42EE-7628-46F3-81B5-23BFEEA996FA" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" bordered="YES" id="Jn7-L1-Ked">
+                                    <size key="minSize" width="12" height="25"/>
+                                    <size key="maxSize" width="12" height="25"/>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -709,33 +724,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="741" height="547"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OcV-O4-3iC">
-                                <rect key="frame" x="30" y="464" width="45" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="0fo-5x-OdR"/>
-                                    <constraint firstAttribute="width" constant="45" id="fum-iA-Vsz"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MfS-Cn-npH">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="addAction:" target="XfG-lQ-9wD" id="b4f-F8-lM4"/>
-                                </connections>
-                            </button>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tzq-O0-bYx">
+                                <rect key="frame" x="0.0" y="0.0" width="741" height="547"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="OcV-O4-3iC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="26" id="7iK-IN-Jab"/>
-                            <constraint firstItem="OcV-O4-3iC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="Onc-Fe-04v"/>
+                            <constraint firstAttribute="trailing" secondItem="Tzq-O0-bYx" secondAttribute="trailing" id="5OG-Zt-rj0"/>
+                            <constraint firstItem="Tzq-O0-bYx" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="7Ne-Ao-wxt"/>
+                            <constraint firstAttribute="bottom" secondItem="Tzq-O0-bYx" secondAttribute="bottom" id="Phk-Pv-A3C"/>
+                            <constraint firstItem="Tzq-O0-bYx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="nDQ-YA-pLz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Tzq-O0-bYx" id="5zd-Tf-gqa"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="205.5" y="793.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NSAddTemplate" width="14" height="13"/>
-    </resources>
 </document>
