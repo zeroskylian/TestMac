@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Kingfisher (6.3.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.0.1)
+  - TXLiteAVSDK_TRTC_Mac (8.9.10347)
+
+DEPENDENCIES:
+  - Kingfisher
+  - Moya
+  - SnapKit
+  - TXLiteAVSDK_TRTC_Mac (= 8.9.10347)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - SnapKit
+    - TXLiteAVSDK_TRTC_Mac
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  TXLiteAVSDK_TRTC_Mac: eb780435b7ceba36063c17a43f47ba2b6a23b6a7
+
+PODFILE CHECKSUM: 6a24abc4a985a94190543564b45a63d36ff4a865
+
+COCOAPODS: 1.10.2
