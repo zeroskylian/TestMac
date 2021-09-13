@@ -17,10 +17,24 @@ class HLMailAddressView: NSView, NibLoadable {
     
     @IBOutlet weak var titleLb: NSTextField!
     
+    @IBOutlet weak var scrollView: NSScrollView!
+    
     @IBOutlet weak var inputTextView: HLMailAddressTextView! {
         didSet {
             inputTextView.font = .systemFont(ofSize: 14)
-            inputTextView.textStorage?.addAttributes([.baselineOffset: 5], range: NSRange(location: 0, length: 0))
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        inputTextView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        scrollView.snp.makeConstraints { make in
+            make.left.equalTo(titleLb.snp.right).offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(titleLb)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
     
@@ -52,11 +66,25 @@ extension HLMailAddressView: NSTextViewDelegate {
 }
 
 class HLMailAddressTextView: NSTextView {
+    
+    override var intrinsicContentSize: NSSize {
+        guard let textContainer = self.textContainer,
+              let layoutManager = self.layoutManager else {
+            return .zero
+        }
+        layoutManager.ensureLayout(for: textContainer)
+        return layoutManager.usedRect(for: textContainer).size
+    }
+    
     override func performKeyEquivalent(with event: NSEvent) -> Bool {
         return super.performKeyEquivalent(with: event)
     }
     
     override func resignFirstResponder() -> Bool {
         return super.resignFirstResponder()
+    }
+    override func didChangeText() {
+        super.didChangeText()
+        invalidateIntrinsicContentSize()
     }
 }

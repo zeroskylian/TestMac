@@ -24,8 +24,9 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sze-j0-Wlc">
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sze-j0-Wlc">
                     <rect key="frame" x="70" y="10" width="299" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="Ez6-Qe-cxs">
                         <rect key="frame" x="0.0" y="0.0" width="299" height="22"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,12 +56,8 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="sze-j0-Wlc" firstAttribute="top" secondItem="jZM-rg-zJO" secondAttribute="top" id="59Q-Lt-DUx"/>
                 <constraint firstItem="jZM-rg-zJO" firstAttribute="leading" secondItem="abM-qk-aty" secondAttribute="leading" constant="10" id="Ifd-pa-CPp"/>
-                <constraint firstItem="sze-j0-Wlc" firstAttribute="leading" secondItem="jZM-rg-zJO" secondAttribute="trailing" constant="10" id="J4h-6C-f4m"/>
                 <constraint firstItem="jZM-rg-zJO" firstAttribute="top" secondItem="abM-qk-aty" secondAttribute="top" constant="14" id="LJr-eF-Ntk"/>
-                <constraint firstAttribute="bottom" secondItem="sze-j0-Wlc" secondAttribute="bottom" constant="10" id="P0d-cu-gPB"/>
-                <constraint firstAttribute="trailing" secondItem="sze-j0-Wlc" secondAttribute="trailing" constant="10" id="vtr-p7-poH"/>
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="layerBackgroundColor">
@@ -69,6 +66,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="inputTextView" destination="sA9-F8-eyL" id="ABg-UK-LSQ"/>
+                <outlet property="scrollView" destination="sze-j0-Wlc" id="SCU-hu-tnM"/>
                 <outlet property="titleLb" destination="jZM-rg-zJO" id="qeb-1X-JJo"/>
             </connections>
             <point key="canvasLocation" x="102.5" y="24"/>

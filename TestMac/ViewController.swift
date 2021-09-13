@@ -19,19 +19,22 @@ class ViewController: NSViewController {
         tv.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(52)
-            make.height.equalTo(44)
+            make.height.greaterThanOrEqualTo(44)
         }
     }
     @IBAction func addtag(_ sender: Any) {
         
-        let text = tv.getText()
-        if text.isEmail {
-            let address = HLEmailKit.Address(name: nil, mail: text)
-            tv.cleanPlainText()
-            tv.add(address: address)
-        } else {
-            tv.cleanPlainText()
+        let text = tv.getText().trimmed.replacingOccurrences(of: "\u{fffc}", with: "")
+        if text.count > 0 {
+            if text.isEmail {
+                let address = HLEmailKit.Address(name: nil, mail: text)
+                tv.cleanPlainText()
+                tv.add(address: address)
+            } else {
+                tv.cleanPlainText()
+            }
         }
+        
         let mail = HLEmailKit.Address(name: "廉鑫博", mail: "lianxinbo@hengli.com")
         
         tv.add(address: mail)

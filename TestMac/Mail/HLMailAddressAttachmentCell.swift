@@ -19,7 +19,7 @@ class HLMailAddressAttachmentCell: NSTextAttachmentCell {
     
     override func cellSize() -> NSSize {
         if let address = address {
-            let size = address.getName().boundingRect(with: CGSize(width: 1000, height: 50), options: [.usesFontLeading, .usesLineFragmentOrigin], attributes: [.font: style.font])
+            let size = address.getName().boundingRect(with: CGSize(width: 200, height: 50), options: [.usesFontLeading, .usesLineFragmentOrigin], attributes: [.font: style.font])
             let expand = CGSize(width: ceil(size.width) + 10, height: size.height + 4)
             contentView.size = expand
             return expand
