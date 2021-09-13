@@ -11,6 +11,7 @@
 		6329C7AD26EF232700BCFA1C /* HLEmailKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6329C7AC26EF232700BCFA1C /* HLEmailKit.swift */; };
 		6329C7AF26EF247300BCFA1C /* HLMailAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6329C7AE26EF247300BCFA1C /* HLMailAddressView.swift */; };
 		6329C7B126EF249900BCFA1C /* HLMailAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6329C7B026EF249900BCFA1C /* HLMailAddressView.xib */; };
+		632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C6BEC26EF3866001E7C44 /* StringExtensions.swift */; };
 		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
 		639936AA26EC465800348155 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936A926EC465800348155 /* EncodableExtension.swift */; };
 		639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936AB26EC4F7B00348155 /* StringExtension.swift */; };
@@ -31,6 +32,7 @@
 		6329C7AC26EF232700BCFA1C /* HLEmailKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLEmailKit.swift; sourceTree = "<group>"; };
 		6329C7AE26EF247300BCFA1C /* HLMailAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLMailAddressView.swift; sourceTree = "<group>"; };
 		6329C7B026EF249900BCFA1C /* HLMailAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLMailAddressView.xib; sourceTree = "<group>"; };
+		632C6BEC26EF3866001E7C44 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		639936A926EC465800348155 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		639936AB26EC4F7B00348155 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				63B0881E26EB65AC0062FA7B /* DictionaryExtensions.swift */,
 				639936A926EC465800348155 /* EncodableExtension.swift */,
 				639936AB26EC4F7B00348155 /* StringExtension.swift */,
+				632C6BEC26EF3866001E7C44 /* StringExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */,
 				63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */,
 				63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */,
 				6329C7AB26EF22FC00BCFA1C /* HLMailAddressAttachmentCell.swift in Sources */,

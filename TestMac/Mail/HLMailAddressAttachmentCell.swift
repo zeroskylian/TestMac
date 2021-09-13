@@ -9,23 +9,22 @@ import AppKit
 
 class HLMailAddressAttachmentCell: NSTextAttachmentCell {
     
-    var contentView: HLMailTagCellContentView = HLMailTagCellContentView()
-    
-    var needAddTrackingArea: Bool = false {
+    var style: Style = .receiver {
         didSet {
-            contentView.needAddTrackingArea = needAddTrackingArea
+            contentView.style = style
         }
     }
     
+    var contentView: HLMailTagCellContentView = HLMailTagCellContentView()
+    
     override func cellSize() -> NSSize {
         if let address = address {
-            let size = address.getName().boundingRect(with: CGSize(width: 1000, height: 50), options: [.usesFontLeading, .usesLineFragmentOrigin], attributes: [.font: NSFont.systemFont(ofSize: 12)])
+            let size = address.getName().boundingRect(with: CGSize(width: 1000, height: 50), options: [.usesFontLeading, .usesLineFragmentOrigin], attributes: [.font: style.font])
             let expand = CGSize(width: ceil(size.width) + 10, height: size.height + 4)
             contentView.size = expand
             return expand
         }
-        contentView.size = CGSize(width: 100, height: 15)
-        return CGSize(width: 100, height: 15)
+        return .zero
     }
     
     var address: HLEmailKit.Address?
@@ -44,6 +43,7 @@ class HLMailAddressAttachmentCell: NSTextAttachmentCell {
             }
         }
     }
+    
     override func draw(withFrame cellFrame: NSRect, in controlView: NSView?) {
         super.draw(withFrame: cellFrame, in: controlView)
         if let control = controlView {
@@ -51,14 +51,47 @@ class HLMailAddressAttachmentCell: NSTextAttachmentCell {
                 control.addSubview(contentView)
             }
             contentView.mm.x = cellFrame.minX
+            contentView.mm.y = cellFrame.minY
         }
     }
+    
     deinit {
         contentView.removeFromSuperview()
+    }
+    
+    struct Style: RawRepresentable, Equatable {
+        let rawValue: String
+        
+        static let address = Style(rawValue: "address")
+        
+        static let receiver = Style(rawValue: "receiver")
+        
+        var font: NSFont {
+            switch self {
+            case .address:
+                return .systemFont(ofSize: 14)
+            default:
+                return .systemFont(ofSize: 12)
+            }
+        }
     }
 }
 
 class HLMailTagCellContentView: NSView {
+    
+    var style: HLMailAddressAttachmentCell.Style = .receiver {
+        didSet {
+            textLb.font = style.font
+            switch style {
+            case .address:
+                selectedBg.isHidden = false
+            case .receiver:
+                selectedBg.isHidden = true
+            default:
+                break
+            }
+        }
+    }
     
     var address: HLEmailKit.Address? {
         didSet {
@@ -110,9 +143,7 @@ class HLMailTagCellContentView: NSView {
     
     override func layout() {
         super.layout()
-        guard needAddTrackingArea == true else {
-            return
-        }
+        guard needAddTrackingArea == true else { return }
         if let tracking = labelTrackingArea {
             removeTrackingArea(tracking)
         }

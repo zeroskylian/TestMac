@@ -8,7 +8,7 @@
 import AppKit
 
 protocol HLMailAddressViewDelegate: AnyObject {
-    func mailAddressView(view: HLMailAddressView, add address: String)
+    func mailAddressView(view: HLMailAddressView, add text: String)
 }
 
 class HLMailAddressView: NSView, NibLoadable {
@@ -20,28 +20,23 @@ class HLMailAddressView: NSView, NibLoadable {
     @IBOutlet weak var inputTextView: HLMailAddressTextView! {
         didSet {
             inputTextView.font = .systemFont(ofSize: 14)
+            inputTextView.textStorage?.addAttributes([.baselineOffset: 5], range: NSRange(location: 0, length: 0))
         }
     }
     
     func add(address: HLEmailKit.Address) {
-        if let attachment = create(address: address, needAddTrackingArea: false) {
+        if let attachment = address.create(style: .address) {
             let attribute = NSAttributedString(attachment: attachment)
             inputTextView.textStorage?.append(attribute)
         }
     }
     
-    func create(address: HLEmailKit.Address, needAddTrackingArea: Bool) -> NSTextAttachment? {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(address)
-            let attachment = NSTextAttachment(data: data, ofType: "mail")
-            let cell = HLMailAddressAttachmentCell()
-            cell.needAddTrackingArea = needAddTrackingArea
-            attachment.attachmentCell = cell
-            return attachment
-        } catch {
-            return nil
-        }
+    func cleanPlainText() {
+        inputTextView.string = ""
+    }
+    
+    func getText() -> String {
+        return inputTextView.string
     }
 }
 
@@ -49,7 +44,7 @@ class HLMailAddressView: NSView, NibLoadable {
 extension HLMailAddressView: NSTextViewDelegate {
     func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(NSTextView.insertNewline(_:)) {
-//            delegate?.mailAddressView(view: self, add: <#T##String#>)
+            delegate?.mailAddressView(view: self, add: inputTextView.string)
             return true
         }
         return false

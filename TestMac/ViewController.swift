@@ -14,9 +14,8 @@ class ViewController: NSViewController {
     let tv = HLMailAddressView.createFromNib()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         view.addSubview(tv)
+        tv.delegate = self
         tv.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(52)
@@ -24,7 +23,17 @@ class ViewController: NSViewController {
         }
     }
     @IBAction func addtag(_ sender: Any) {
+        
+        let text = tv.getText()
+        if text.isEmail {
+            let address = HLEmailKit.Address(name: nil, mail: text)
+            tv.cleanPlainText()
+            tv.add(address: address)
+        } else {
+            tv.cleanPlainText()
+        }
         let mail = HLEmailKit.Address(name: "廉鑫博", mail: "lianxinbo@hengli.com")
+        
         tv.add(address: mail)
     }
     
@@ -39,3 +48,16 @@ class ViewController: NSViewController {
     }
 }
 
+
+// MARK: - HLMailAddressViewDelegate
+extension ViewController: HLMailAddressViewDelegate {
+    func mailAddressView(view: HLMailAddressView, add text: String) {
+        if text.isEmail {
+            let address = HLEmailKit.Address(name: nil, mail: text)
+            view.cleanPlainText()
+            view.add(address: address)
+        } else {
+            
+        }
+    }
+}
