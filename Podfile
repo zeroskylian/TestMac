@@ -7,6 +7,6 @@ inhibit_all_warnings!
 target 'TestMac' do
   pod 'Kingfisher'
   pod 'SnapKit'
-  pod 'Moya'
-  pod 'TXLiteAVSDK_TRTC_Mac'
+  pod 'Alamofire'
+  pod 'AnyCodable-FlightSchool'
 end
