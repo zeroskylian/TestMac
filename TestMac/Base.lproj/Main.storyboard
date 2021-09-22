@@ -726,7 +726,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-NL-5FP">
-                                <rect key="frame" x="37" y="346" width="75" height="32"/>
+                                <rect key="frame" x="37" y="320" width="75" height="32"/>
                                 <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y7R-6F-Sps">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -735,12 +735,134 @@
                                     <action selector="addtag:" target="XfG-lQ-9wD" id="QtZ-J8-wqW"/>
                                 </connections>
                             </button>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irt-ez-Td8">
+                                <rect key="frame" x="26" y="393" width="240" height="135"/>
+                                <clipView key="contentView" drawsBackground="NO" id="lGg-0r-CP9">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="d7v-uW-ONy" customClass="RichTextView" customModule="TestMac" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="240" height="135"/>
+                                            <size key="maxSize" width="240" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Hva-RL-Iky"/>
+                                    <constraint firstAttribute="height" constant="135" id="mj1-vZ-u8P"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="pOc-KL-Hsm">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="W6k-d4-fjN">
+                                    <rect key="frame" x="224" y="0.0" width="16" height="135"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZj-qU-hj4">
+                                <rect key="frame" x="61" y="247" width="43" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundTextured" title="字体" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Li1-LL-eh5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeFont:" target="XfG-lQ-9wD" id="2pc-0V-LsQ"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5o-KN-eeo">
+                                <rect key="frame" x="522" y="245" width="78" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U9s-eF-rnb" id="wSM-RM-dcM">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="oav-Dj-cLi">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="U9s-eF-rnb"/>
+                                            <menuItem title="Item 2" id="ddS-FF-9Y2"/>
+                                            <menuItem title="Item 3" id="ze5-Hv-qWM"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="fontSizeChangeAction:" target="XfG-lQ-9wD" id="PhT-rJ-w7b"/>
+                                </connections>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGj-aX-Ody">
+                                <rect key="frame" x="125" y="247" width="55" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundTextured" title="颜色" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="NIa-JS-thc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeColor:" target="XfG-lQ-9wD" id="faR-DY-aO1"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6t-mB-SBN" customClass="HLImageStateButton" customModule="TestMac" customModuleProvider="target">
+                                <rect key="frame" x="234" y="237" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="mail_font_bold" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="MjE-tJ-dZr">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setFontBold:" target="XfG-lQ-9wD" id="obo-T1-8Jn"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8l-9i-CJR" customClass="HLImageStateButton" customModule="TestMac" customModuleProvider="target">
+                                <rect key="frame" x="285" y="237" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="mail_font_italic" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Gdg-wh-rrf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setFontItalic:" target="XfG-lQ-9wD" id="gjk-e4-goO"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpb-FW-GVo" customClass="HLImageStateButton" customModule="TestMac" customModuleProvider="target">
+                                <rect key="frame" x="390" y="239" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="mail_font_strikethrough" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="m3U-13-ucr">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setFontStrikethrough:" target="XfG-lQ-9wD" id="a9z-da-fxp"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gw7-VS-baJ" customClass="HLImageStateButton" customModule="TestMac" customModuleProvider="target">
+                                <rect key="frame" x="343" y="237" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="mail_font_underline" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nFx-S8-gTS">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setFontUnderline:" target="XfG-lQ-9wD" id="lrS-B0-G12"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="E1Q-NL-5FP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="174" id="AtK-Kj-Xzq"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E1Q-NL-5FP" secondAttribute="trailing" constant="20" symbolic="YES" id="6t8-jK-jLE"/>
+                            <constraint firstItem="E1Q-NL-5FP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="200" id="AtK-Kj-Xzq"/>
+                            <constraint firstItem="Irt-ez-Td8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="19" id="WcR-1l-3S3"/>
                             <constraint firstItem="E1Q-NL-5FP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="44" id="y9c-8g-LNo"/>
+                            <constraint firstItem="Irt-ez-Td8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="26" id="ylr-Ba-bN3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fontSizeButton" destination="Z5o-KN-eeo" id="gho-6f-1A8"/>
+                        <outlet property="italic" destination="gw7-VS-baJ" id="LWm-Hf-2H9"/>
+                        <outlet property="textView" destination="d7v-uW-ONy" id="bnV-cD-8kH"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -749,5 +871,9 @@
     </scenes>
     <resources>
         <image name="NSTouchBarSidebarTemplate" width="18" height="14"/>
+        <image name="mail_font_bold" width="16" height="16"/>
+        <image name="mail_font_italic" width="16" height="16"/>
+        <image name="mail_font_strikethrough" width="16" height="16"/>
+        <image name="mail_font_underline" width="16" height="16"/>
     </resources>
 </document>

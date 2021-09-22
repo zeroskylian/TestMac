@@ -1016,23 +1016,3 @@ public extension String {
         return (module, file)
     }
 }
-
-public extension String {
-    
-    var isPhoneNo: Bool {
-        let regex: String = "^1[3456789]\\d{9}$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        return predicate.evaluate(with: self)
-    }
-    
-    var isPassword: Bool {
-        return !self.isEmpty
-    }
-    
-    var md5: String {
-        let utf8 = cString(using: .utf8)
-        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-        CC_MD5(utf8, CC_LONG(utf8!.count - 1), &digest)
-        return digest.reduce("") { $0 + String(format:"%02X", $1) }
-    }
-}
