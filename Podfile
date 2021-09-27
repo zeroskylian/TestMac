@@ -9,4 +9,5 @@ target 'TestMac' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'AnyCodable-FlightSchool'
+  pod 'SwiftSoup'
 end

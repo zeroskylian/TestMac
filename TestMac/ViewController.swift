@@ -6,11 +6,29 @@
 //
 
 import Cocoa
+import SwiftSoup
 
 class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let html = "<div style=\"font-family: Arial;\"><div style=\"font-family:Arial;\">\n\t<div style=\"font-family:Arial;\">\n\t\tasdasdasd<img src=\"/coremail/s?func=mbox:getComposeData&amp;sid=BAqFYtEEMFqPaASrVsEEgPzcxhqSkCnt&amp;composeId=1632363392253&amp;attachId=1\" alt=\"\">sadasdasdas<br>\n<br>\nasdasd<br>\n\t\t<blockquote class=\"ReferenceQuote\" style=\"padding-left:5px;margin-left:5px;border-left:#b6b6b6 2px solid;margin-right:0;\">\n\t\t\t-----原始邮件-----<br>\n<b>发件人:</b><span id=\"rc_from\">\"桑原野\" &lt;zhengxinqi@delicf.com&gt;</span><br>\n<b>发送时间:</b><span id=\"rc_senttime\">2021-09-17 10:45:22 (星期五)</span><br>\n<b>收件人:</b> zhengxinqi@delicf.com<br>\n<b>抄送:</b> <br>\n<b>主题:</b> Test0917000000005<br>\n<br>\nEeeeeeeeeeeeeee\n发自HENGLINK\n\t\t</blockquote>\n\t</div>\n</div></div>"
+        do {
+            guard let doc: Document = try? SwiftSoup.parse(html) else { return }
+            let srcs: Elements = try doc.select("img[src]")
+            srcs.forEach { elem in
+                do {
+                    let oldValue = try elem.attr("src")
+                    try elem.attr("src", oldValue + "&lina")
+                } catch {
+                    
+                }
+            }
+            print(doc)
+        } catch {
+            print(error)
+        }
     }
     
     
