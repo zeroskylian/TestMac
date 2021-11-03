@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -685,7 +685,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="TabWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="TabWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" animationBehavior="default" titlebarAppearsTransparent="YES" toolbarStyle="unified" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -697,12 +697,13 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Ulv-Ny-lSm"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="uKs-V2-muq"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="WWZ-Ta-8ph"/>
-                                <toolbarItem implicitItemIdentifier="D25C42EE-7628-46F3-81B5-23BFEEA996FA" label="" paletteLabel="" tag="-1" image="NSTouchBarSidebarTemplate" id="Jn7-L1-Ked">
+                                <toolbarItem implicitItemIdentifier="D25C42EE-7628-46F3-81B5-23BFEEA996FA" label="" paletteLabel="" tag="-1" image="NSTouchBarSidebarTemplate" visibilityPriority="1" autovalidates="NO" navigational="YES" id="Jn7-L1-Ked">
                                     <size key="minSize" width="12" height="25"/>
                                     <size key="maxSize" width="12" height="25"/>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="WWZ-Ta-8ph"/>
                                 <toolbarItem reference="Jn7-L1-Ked"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -850,6 +851,16 @@
                                     <action selector="setFontUnderline:" target="XfG-lQ-9wD" id="lrS-B0-G12"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-6T-O0v">
+                                <rect key="frame" x="81" y="55" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Main/arrowdown" id="8dK-Go-wTA"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2C-tR-VrA">
+                                <rect key="frame" x="170" y="60" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Test/arrowdown" id="4o6-Hm-Y4X"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E1Q-NL-5FP" secondAttribute="trailing" constant="20" symbolic="YES" id="6t8-jK-jLE"/>
@@ -871,7 +882,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Main/arrowdown" width="8" height="8"/>
         <image name="NSTouchBarSidebarTemplate" width="18" height="14"/>
+        <image name="Test/arrowdown" width="16" height="16"/>
         <image name="mail_font_bold" width="16" height="16"/>
         <image name="mail_font_italic" width="16" height="16"/>
         <image name="mail_font_strikethrough" width="16" height="16"/>
