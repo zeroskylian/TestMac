@@ -29,44 +29,6 @@ class ViewController: NSViewController {
         } catch {
             print(error)
         }
-        
-        drag.layerBackgroundColor = .red
-        view.addSubview(drag)
-        
-        let gesture = NSPanGestureRecognizer(target: self, action: #selector(gestureAction(gesture:)))
-        gesture.delaysOtherMouseButtonEvents = true
-        drag.addGestureRecognizer(gesture)
-    }
-    let drag = HLDragView(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
-    
-    var beginPoint = CGPoint(x: 0, y: 100)
-    
-    @objc private func gestureAction(gesture: NSPanGestureRecognizer) {
-        switch gesture.state {
-        case .possible:
-            break
-        case .began:
-            beginPoint = drag.center
-        case .changed:
-            let location = gesture.location(in: self.view)
-            print(location)
-            let translation = gesture.translation(in: self.view)
-            
-//            let origin = drag.frame
-//            let frame = CGRect(x: beginPoint.x + translation.x, y: beginPoint.y + translation.y, width: origin.width, height: origin.height)
-//            print(frame)
-            let center = CGPoint(x: beginPoint.x + translation.x, y: beginPoint.y + translation.y)
-            drag.center = center
-//            drag.frame = frame
-        case .ended:
-            break
-        case .cancelled:
-            break
-        case .failed:
-            break
-        @unknown default:
-            break
-        }
     }
     
     @IBOutlet var textView: RichTextView! {
@@ -147,22 +109,6 @@ class ViewController: NSViewController {
     }
     
     
-    
-    @IBAction func addtag(_ sender: Any) {
-        guard let attrStr = textView.textStorage else { return }
-        let documentAttributes: [NSAttributedString.DocumentAttributeKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .excludedElements: ["html", "head", "body"]]
-        do {
-            let htmlData = try attrStr.data(from: NSMakeRange(0, attrStr.length), documentAttributes:documentAttributes)
-            if let htmlString = String(data:htmlData, encoding: .utf8) {
-                print(htmlString)
-                print("----")
-            }
-            
-        } catch {
-            print("error creating HTML from Attributed String")
-        }
-    }
-    
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
@@ -171,6 +117,11 @@ class ViewController: NSViewController {
     
     func delay(seconds: TimeInterval, closure: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
+    }
+    
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        presentAsModalWindow(DragViewController())
     }
 }
 
@@ -230,10 +181,9 @@ class HLRichText {
         
         if underline {
             attribute[.underlineStyle] = NSUnderlineStyle.single.rawValue
-            
         }
-        
         let attributeString = NSMutableAttributedString(string: string, attributes: attribute)
         return attributeString
     }
 }
+

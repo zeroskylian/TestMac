@@ -690,23 +690,6 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="E9F704D9-0D56-4CD7-B0E1-E2F2C5EB4580" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="upp-ms-6lL">
-                            <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="FLr-LX-sUZ"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="bzQ-T5-5jH"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Ulv-Ny-lSm"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="uKs-V2-muq"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="WWZ-Ta-8ph"/>
-                                <toolbarItem implicitItemIdentifier="D25C42EE-7628-46F3-81B5-23BFEEA996FA" label="" paletteLabel="" tag="-1" image="NSTouchBarSidebarTemplate" visibilityPriority="1" autovalidates="NO" navigational="YES" id="Jn7-L1-Ked">
-                                    <size key="minSize" width="12" height="25"/>
-                                    <size key="maxSize" width="12" height="25"/>
-                                </toolbarItem>
-                            </allowedToolbarItems>
-                            <defaultToolbarItems>
-                                <toolbarItem reference="WWZ-Ta-8ph"/>
-                                <toolbarItem reference="Jn7-L1-Ked"/>
-                            </defaultToolbarItems>
-                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -734,7 +717,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="addtag:" target="XfG-lQ-9wD" id="QtZ-J8-wqW"/>
+                                    <action selector="buttonAction:" target="XfG-lQ-9wD" id="nmm-bC-CBE"/>
                                 </connections>
                             </button>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irt-ez-Td8">
@@ -778,24 +761,6 @@
                                     <action selector="changeFont:" target="XfG-lQ-9wD" id="2pc-0V-LsQ"/>
                                 </connections>
                             </button>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5o-KN-eeo">
-                                <rect key="frame" x="522" y="245" width="78" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U9s-eF-rnb" id="wSM-RM-dcM">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="oav-Dj-cLi">
-                                        <items>
-                                            <menuItem title="Item 1" state="on" id="U9s-eF-rnb"/>
-                                            <menuItem title="Item 2" id="ddS-FF-9Y2"/>
-                                            <menuItem title="Item 3" id="ze5-Hv-qWM"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="fontSizeChangeAction:" target="XfG-lQ-9wD" id="PhT-rJ-w7b"/>
-                                </connections>
-                            </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGj-aX-Ody">
                                 <rect key="frame" x="125" y="247" width="55" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -871,7 +836,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fontSizeButton" destination="Z5o-KN-eeo" id="gho-6f-1A8"/>
                         <outlet property="italic" destination="gw7-VS-baJ" id="LWm-Hf-2H9"/>
                         <outlet property="textView" destination="d7v-uW-ONy" id="bnV-cD-8kH"/>
                     </connections>
@@ -883,7 +847,6 @@
     </scenes>
     <resources>
         <image name="Main/arrowdown" width="8" height="8"/>
-        <image name="NSTouchBarSidebarTemplate" width="18" height="14"/>
         <image name="Test/arrowdown" width="16" height="16"/>
         <image name="mail_font_bold" width="16" height="16"/>
         <image name="mail_font_italic" width="16" height="16"/>
