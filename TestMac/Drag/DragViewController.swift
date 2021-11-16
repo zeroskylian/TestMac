@@ -27,10 +27,13 @@ class DragViewController: NSViewController {
         return destinationURL
     }()
     
-    let dragView = HLDragView(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let image = NSImage(named: "tieba")!
+        let imageView = NSImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let dragView = HLDragView(frame: CGRect(x: 100, y: 100, width: 200, height: 200), contents: imageView)
+        dragView.snapshotItem = .image(name: "test.png", image: image)
         dragView.delegate = self
         view.addSubview(dragView)
         dragView.snp.makeConstraints { make in
