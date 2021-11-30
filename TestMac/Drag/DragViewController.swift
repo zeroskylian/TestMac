@@ -30,10 +30,11 @@ class DragViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let image = NSImage(named: "tieba")!
-        let imageView = NSImageView(image: image)
+        let imageView = TestImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let dragView = HLDragView(frame: CGRect(x: 100, y: 100, width: 200, height: 200), contents: imageView)
-        dragView.snapshotItem = .image(name: "test.png", image: image)
+        let dragView = HLDragView(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
+        dragView.layerBackgroundColor = .cyan
+//        dragView.contents = imageView
         dragView.delegate = self
         view.addSubview(dragView)
         dragView.snp.makeConstraints { make in
@@ -63,6 +64,7 @@ extension DragViewController: HLDragViewDelegate {
             .urlReadingFileURLsOnly: true,
             .urlReadingContentsConformToTypes: [ kUTTypeImage ]
         ]
+        
         /// - Tag: HandleFilePromises
         sender.enumerateDraggingItems(options: [], for: nil, classes: supportedClasses, searchOptions: searchOptions) { (draggingItem, _, _) in
             switch draggingItem.item {
@@ -70,6 +72,8 @@ extension DragViewController: HLDragViewDelegate {
                 filePromiseReceiver.receivePromisedFiles(atDestination: self.destinationURL, options: [:], operationQueue: self.workQueue) { (fileURL, error) in
                     if let error = error {
                         print(error)
+                    } else {
+                        print(fileURL)
                     }
                 }
             case let fileURL as URL:
@@ -129,4 +133,8 @@ extension DragViewController: NSFilePromiseProviderDelegate {
 
 enum RuntimeError: Error {
     case unavailableSnapshot
+}
+
+class TestImageView: NSImageView, HLDragViewContent {
+    var snapshotItem: HLDragView.SnapshotItem? = .image(name: "test.png", image: NSImage(named: "tieba")!)
 }

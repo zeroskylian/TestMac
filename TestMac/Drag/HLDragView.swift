@@ -24,32 +24,24 @@ class HLDragView: NSView {
     
     weak var delegate: HLDragViewDelegate?
     
-    private let overlay: NSView = NSView()
-    
-    var contents: NSView?
-    
-    var snapshotItem: SnapshotItem?
-    
-    convenience init(contents: NSView?) {
-        self.init(frame: .zero, contents: contents)
-    }
-    
-    init(frame frameRect: NSRect, contents: NSView?) {
-        super.init(frame: frameRect)
-        self.contents = contents
-        setup()
-    }
-    
-    override func layout() {
-        super.layout()
-        overlay.frame = CGRect(origin: .zero, size: delegate?.draggingOverlaySize() ?? .init(width: 100, height: 100))
-    }
-    
-    func setup() {
-        if let contents = contents {
-            addSubview(contents)
+    var contents: HLDragViewContent? {
+        didSet {
+            if let oldValue = oldValue {
+                oldValue.removeFromSuperview()
+            }
+            if let contents = contents {
+                addSubview(contents)
+            }
         }
-        addSubview(overlay)
+    }
+    
+    var snapshotItem: HLDragView.SnapshotItem? {
+        return contents?.snapshotItem
+    }
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+//        registerForDraggedTypes([.fileURL])
     }
     
     required init?(coder: NSCoder) {
@@ -76,8 +68,10 @@ class HLDragView: NSView {
                     stop.pointee = true
                     if let delegate = delegate, let contents = self.contents {
                         let draggingItem = NSDraggingItem(pasteboardWriter: delegate.pasteboardWriter(for: self))
-                        let content = NSImage(data: contents.dataWithPDF(inside: overlay.bounds))
-                        draggingItem.setDraggingFrame(overlay.frame, contents: content)
+                        let size = delegate.draggingOverlaySize()
+                        let bounds = CGRect(origin: .zero, size: size)
+                        let content = NSImage(data: contents.dataWithPDF(inside: bounds))
+                        draggingItem.setDraggingFrame(bounds, contents: content)
                         beginDraggingSession(with: [draggingItem], event: event, source: self)
                     }
                 }
@@ -126,4 +120,8 @@ extension HLDragView {
             }
         }
     }
+}
+
+protocol HLDragViewContent: NSView {
+    var snapshotItem: HLDragView.SnapshotItem? { get }
 }

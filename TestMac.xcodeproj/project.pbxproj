@@ -139,7 +139,6 @@
 				6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */,
 				63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */,
 				6318D2F32701C45E00B52D5D /* HLMoreButton.swift */,
-				63A9ADFF27058A9300D5A421 /* HLDragView.swift */,
 				63AD9C84268F16DA00B6B6E8 /* Assets.xcassets */,
 				63AD9C86268F16DA00B6B6E8 /* Main.storyboard */,
 				63AD9C89268F16DA00B6B6E8 /* Info.plist */,
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				63B910062743B08F00F2D818 /* DragViewController.swift */,
+				63A9ADFF27058A9300D5A421 /* HLDragView.swift */,
 			);
 			path = Drag;
 			sourceTree = "<group>";
