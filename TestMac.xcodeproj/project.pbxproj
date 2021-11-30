@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6318BD6C2755B3AA00BA9270 /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318BD6B2755B3AA00BA9270 /* RichTextView.swift */; };
 		6318D2F42701C45E00B52D5D /* HLMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318D2F32701C45E00B52D5D /* HLMoreButton.swift */; };
 		632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C6BEC26EF3866001E7C44 /* StringExtensions.swift */; };
 		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		3A7D3857C834ED7F205C6E92 /* Pods-TestMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMac.release.xcconfig"; path = "Target Support Files/Pods-TestMac/Pods-TestMac.release.xcconfig"; sourceTree = "<group>"; };
 		47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6318BD6B2755B3AA00BA9270 /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		6318D2F32701C45E00B52D5D /* HLMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLMoreButton.swift; sourceTree = "<group>"; };
 		632C6BEC26EF3866001E7C44 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMac-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6318BD6A2755B3A200BA9270 /* RichTextView */ = {
+			isa = PBXGroup;
+			children = (
+				6318BD6B2755B3AA00BA9270 /* RichTextView.swift */,
+			);
+			path = RichTextView;
+			sourceTree = "<group>";
+		};
 		6329C7A426EF224B00BCFA1C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		63AD9C7F268F16D900B6B6E8 /* TestMac */ = {
 			isa = PBXGroup;
 			children = (
+				6318BD6A2755B3A200BA9270 /* RichTextView */,
 				63B910052743B08200F2D818 /* Drag */,
 				63AB7BAC272B93C200598A86 /* Assets */,
 				6329C7A426EF224B00BCFA1C /* Common */,
@@ -282,6 +293,7 @@
 				639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */,
 				63AB7BB0272B94A100598A86 /* AssetsImage.swift in Sources */,
 				63B910072743B08F00F2D818 /* DragViewController.swift in Sources */,
+				6318BD6C2755B3AA00BA9270 /* RichTextView.swift in Sources */,
 				639936AA26EC465800348155 /* EncodableExtension.swift in Sources */,
 				63AD9C81268F16D900B6B6E8 /* AppDelegate.swift in Sources */,
 				6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */,
