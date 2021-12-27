@@ -5,3 +5,9 @@ xcassets:
     outputs:
       - templateName: swift5
         output: AssetsImage.swift
+  - inputs: Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: AssetsColor.swift
+        params:
+          enumName: HLColor

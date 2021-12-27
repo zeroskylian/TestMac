@@ -25,6 +25,7 @@ internal enum Asset {
   internal enum Test {
     internal static let arrowdown = ImageAsset(name: "Test/arrowdown")
   }
+  internal static let bottomArrow = ImageAsset(name: "bottom_arrow")
   internal static let iconPhonecall = ImageAsset(name: "icon_phonecall")
   internal static let mailFontBold = ImageAsset(name: "mail_font_bold")
   internal static let mailFontItalic = ImageAsset(name: "mail_font_italic")
