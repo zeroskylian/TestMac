@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
 		639936AA26EC465800348155 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936A926EC465800348155 /* EncodableExtension.swift */; };
 		639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936AB26EC4F7B00348155 /* StringExtension.swift */; };
+		639E8CCE277AACB800B3F060 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 639E8CCD277AACB800B3F060 /* EFQRCode */; };
 		63A9AE0027058A9300D5A421 /* HLDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A9ADFF27058A9300D5A421 /* HLDragView.swift */; };
 		63AB7BB0272B94A100598A86 /* AssetsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB7BAF272B94A100598A86 /* AssetsImage.swift */; };
 		63AD9C81268F16D900B6B6E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD9C80268F16D900B6B6E8 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB918D2B9A975B61F4934A7 /* libPods-TestMac.a in Frameworks */,
+				639E8CCE277AACB800B3F060 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,9 @@
 			dependencies = (
 			);
 			name = TestMac;
+			packageProductDependencies = (
+				639E8CCD277AACB800B3F060 /* EFQRCode */,
+			);
 			productName = TestMac;
 			productReference = 63AD9C7D268F16D900B6B6E8 /* TestMac.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +218,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 63AD9C74268F16D900B6B6E8;
+			packageReferences = (
+				639E8CCC277AACB800B3F060 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+			);
 			productRefGroup = 63AD9C7E268F16D900B6B6E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -502,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		639E8CCC277AACB800B3F060 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		639E8CCD277AACB800B3F060 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 639E8CCC277AACB800B3F060 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63AD9C75268F16D900B6B6E8 /* Project object */;
 }
