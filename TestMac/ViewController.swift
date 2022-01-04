@@ -22,6 +22,16 @@ class ViewController: NSViewController {
         }
         
         
+        let stackView = DraggingStackView(frame: CGRect(x: 0, y: 100, width: 300, height: 300))
+        [NSColor.red, NSColor.blue, .cyan].forEach { color in
+            let v = NSView()
+            v.layerBackgroundColor = color
+            stackView.addArrangedSubview(v)
+        }
+        stackView.orientation = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 2
+        view.addSubview(stackView)
     }
     
     override var representedObject: Any? {

@@ -11,6 +11,7 @@
 		6318D2F42701C45E00B52D5D /* HLMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318D2F32701C45E00B52D5D /* HLMoreButton.swift */; };
 		632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C6BEC26EF3866001E7C44 /* StringExtensions.swift */; };
 		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
+		63973FF527846373008F52BD /* DraggingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63973FF427846373008F52BD /* DraggingStackView.swift */; };
 		639936AA26EC465800348155 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936A926EC465800348155 /* EncodableExtension.swift */; };
 		639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936AB26EC4F7B00348155 /* StringExtension.swift */; };
 		639E8CCE277AACB800B3F060 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 639E8CCD277AACB800B3F060 /* EFQRCode */; };
@@ -35,6 +36,7 @@
 		6318D2F32701C45E00B52D5D /* HLMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLMoreButton.swift; sourceTree = "<group>"; };
 		632C6BEC26EF3866001E7C44 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		63973FF427846373008F52BD /* DraggingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingStackView.swift; sourceTree = "<group>"; };
 		639936A926EC465800348155 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		639936AB26EC4F7B00348155 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		63A9ADFF27058A9300D5A421 /* HLDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLDragView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		63973FF32784633F008F52BD /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				63973FF427846373008F52BD /* DraggingStackView.swift */,
+			);
+			path = StackView;
+			sourceTree = "<group>";
+		};
 		639936A826EC45DE00348155 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		63AD9C7F268F16D900B6B6E8 /* TestMac */ = {
 			isa = PBXGroup;
 			children = (
+				63973FF32784633F008F52BD /* StackView */,
 				6318BD6A2755B3A200BA9270 /* RichTextView */,
 				63B910052743B08200F2D818 /* Drag */,
 				63AB7BAC272B93C200598A86 /* Assets */,
@@ -296,6 +307,7 @@
 				63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */,
 				63B0881B26EB5B440062FA7B /* NSViewExtensions.swift in Sources */,
 				63AD9C83268F16D900B6B6E8 /* ViewController.swift in Sources */,
+				63973FF527846373008F52BD /* DraggingStackView.swift in Sources */,
 				6318D2F42701C45E00B52D5D /* HLMoreButton.swift in Sources */,
 				63FFF61D26F5D5EC00673395 /* HLImageStateButton.swift in Sources */,
 				639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */,
