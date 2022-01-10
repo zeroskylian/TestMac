@@ -21,8 +21,38 @@ class ViewController: NSViewController {
             imageview.image = nsImage
         }
         
+        let url = URL(fileURLWithPath: "/Users/a1/Downloads/PreloadDemo-main.zip")
+        guard FileManager.default.fileExists(atPath: url.path) else { return }
+        do {
+            let fileData = try Data(contentsOf: url)
+            let fileSize = fileData.count
+            print(fileSize)
+            let trunkCount = Int(ceil(Double(fileSize) / Double(offset)))
+            print(trunkCount)
+            var ptr = 0
+            var merger = Data()
+            for i in 0 ..< trunkCount {
+                if i == trunkCount - 1 {
+                    let range = ptr ..< fileSize
+                    let data = fileData.subdata(in: range)
+                    print(range)
+                    merger.append(data)
+                } else {
+                    let range = ptr ..< (ptr + offset)
+                    let data = fileData.subdata(in: range)
+                    print(range)
+                    merger.append(data)
+                }
+                ptr += offset;
+            }
+            try merger.write(to: URL(fileURLWithPath: "/Users/a1/Downloads/1.zip"))
+        } catch {
+            print(error)
+        }
+        
         
     }
+    let offset: Int = 1024 * 1024
     
     override var representedObject: Any? {
         didSet {

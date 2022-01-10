@@ -24,6 +24,7 @@
 		63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0881E26EB65AC0062FA7B /* DictionaryExtensions.swift */; };
 		63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7441626C20B6000DAA0B1 /* NSLabel.swift */; };
 		63B910072743B08F00F2D818 /* DragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B910062743B08F00F2D818 /* DragViewController.swift */; };
+		63CA4B7C27897AA2009589E9 /* FileFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA4B7B27897AA2009589E9 /* FileFragment.swift */; };
 		63FFF61D26F5D5EC00673395 /* HLImageStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */; };
 		6BB918D2B9A975B61F4934A7 /* libPods-TestMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		63B0881E26EB65AC0062FA7B /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		63B7441626C20B6000DAA0B1 /* NSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
 		63B910062743B08F00F2D818 /* DragViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragViewController.swift; sourceTree = "<group>"; };
+		63CA4B7B27897AA2009589E9 /* FileFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFragment.swift; sourceTree = "<group>"; };
 		63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLImageStateButton.swift; sourceTree = "<group>"; };
 		8BCDC034CCE9EC6F2EF36DFD /* Pods-TestMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMac.debug.xcconfig"; path = "Target Support Files/Pods-TestMac/Pods-TestMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 		63AD9C7F268F16D900B6B6E8 /* TestMac */ = {
 			isa = PBXGroup;
 			children = (
+				63CA4B7A27897A81009589E9 /* FileFragment */,
 				6318BD6A2755B3A200BA9270 /* RichTextView */,
 				63B910052743B08200F2D818 /* Drag */,
 				63AB7BAC272B93C200598A86 /* Assets */,
@@ -167,6 +170,14 @@
 				63A9ADFF27058A9300D5A421 /* HLDragView.swift */,
 			);
 			path = Drag;
+			sourceTree = "<group>";
+		};
+		63CA4B7A27897A81009589E9 /* FileFragment */ = {
+			isa = PBXGroup;
+			children = (
+				63CA4B7B27897AA2009589E9 /* FileFragment.swift */,
+			);
+			path = FileFragment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A9AE0027058A9300D5A421 /* HLDragView.swift in Sources */,
+				63CA4B7C27897AA2009589E9 /* FileFragment.swift in Sources */,
 				632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */,
 				63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */,
 				63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */,
