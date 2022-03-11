@@ -10,6 +10,7 @@
 		6318BD6C2755B3AA00BA9270 /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318BD6B2755B3AA00BA9270 /* RichTextView.swift */; };
 		6318D2F42701C45E00B52D5D /* HLMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318D2F32701C45E00B52D5D /* HLMoreButton.swift */; };
 		632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C6BEC26EF3866001E7C44 /* StringExtensions.swift */; };
+		63515C2627D0906200E860DF /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63515C2527D0906200E860DF /* AsyncOperation.swift */; };
 		6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */; };
 		639936AA26EC465800348155 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936A926EC465800348155 /* EncodableExtension.swift */; };
 		639936AC26EC4F7B00348155 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639936AB26EC4F7B00348155 /* StringExtension.swift */; };
@@ -25,6 +26,7 @@
 		63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0881E26EB65AC0062FA7B /* DictionaryExtensions.swift */; };
 		63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7441626C20B6000DAA0B1 /* NSLabel.swift */; };
 		63B910072743B08F00F2D818 /* DragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B910062743B08F00F2D818 /* DragViewController.swift */; };
+		63DA49FF279698A000C04A72 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA49FE279698A000C04A72 /* BaseView.swift */; };
 		63F03887278BCF7500B7DC9A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F03886278BCF7500B7DC9A /* URLExtension.swift */; };
 		63FFF61D26F5D5EC00673395 /* HLImageStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */; };
 		6BB918D2B9A975B61F4934A7 /* libPods-TestMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B79D4A1D1A76E0A4740C7A /* libPods-TestMac.a */; };
@@ -36,6 +38,7 @@
 		6318BD6B2755B3AA00BA9270 /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		6318D2F32701C45E00B52D5D /* HLMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLMoreButton.swift; sourceTree = "<group>"; };
 		632C6BEC26EF3866001E7C44 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		63515C2527D0906200E860DF /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		639936A926EC465800348155 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		639936AB26EC4F7B00348155 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		63B0881E26EB65AC0062FA7B /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		63B7441626C20B6000DAA0B1 /* NSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
 		63B910062743B08F00F2D818 /* DragViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragViewController.swift; sourceTree = "<group>"; };
+		63DA49FE279698A000C04A72 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		63F03886278BCF7500B7DC9A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLImageStateButton.swift; sourceTree = "<group>"; };
 		8BCDC034CCE9EC6F2EF36DFD /* Pods-TestMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMac.debug.xcconfig"; path = "Target Support Files/Pods-TestMac/Pods-TestMac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		63AD9C7F268F16D900B6B6E8 /* TestMac */ = {
 			isa = PBXGroup;
 			children = (
+				63DA49FD2796988700C04A72 /* View */,
 				6318BD6A2755B3A200BA9270 /* RichTextView */,
 				63B910052743B08200F2D818 /* Drag */,
 				63AB7BAC272B93C200598A86 /* Assets */,
@@ -154,6 +159,7 @@
 				639936A826EC45DE00348155 /* Extension */,
 				63AD9C80268F16D900B6B6E8 /* AppDelegate.swift */,
 				63AD9C82268F16D900B6B6E8 /* ViewController.swift */,
+				63515C2527D0906200E860DF /* AsyncOperation.swift */,
 				6370544326953B5E0060F6B4 /* TestMac-Bridging-Header.h */,
 				63FFF61C26F5D5EC00673395 /* HLImageStateButton.swift */,
 				6318D2F32701C45E00B52D5D /* HLMoreButton.swift */,
@@ -173,6 +179,14 @@
 				63A9ADFF27058A9300D5A421 /* HLDragView.swift */,
 			);
 			path = Drag;
+			sourceTree = "<group>";
+		};
+		63DA49FD2796988700C04A72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DA49FE279698A000C04A72 /* BaseView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,7 @@
 				63A9AE0027058A9300D5A421 /* HLDragView.swift in Sources */,
 				632C6BED26EF3866001E7C44 /* StringExtensions.swift in Sources */,
 				63B7441726C20B6000DAA0B1 /* NSLabel.swift in Sources */,
+				63515C2627D0906200E860DF /* AsyncOperation.swift in Sources */,
 				63B0881F26EB65AC0062FA7B /* DictionaryExtensions.swift in Sources */,
 				63B0881B26EB5B440062FA7B /* NSViewExtensions.swift in Sources */,
 				63AD9C83268F16D900B6B6E8 /* ViewController.swift in Sources */,
@@ -311,6 +326,7 @@
 				6318BD6C2755B3AA00BA9270 /* RichTextView.swift in Sources */,
 				639936AA26EC465800348155 /* EncodableExtension.swift in Sources */,
 				63F03887278BCF7500B7DC9A /* URLExtension.swift in Sources */,
+				63DA49FF279698A000C04A72 /* BaseView.swift in Sources */,
 				63AD9C81268F16D900B6B6E8 /* AppDelegate.swift in Sources */,
 				6370544426953B5E0060F6B4 /* TestMac-Bridging-Header.h in Sources */,
 			);
@@ -465,6 +481,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengli.TestMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestMac/TestMac-Bridging-Header.h";
@@ -489,6 +506,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengli.TestMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestMac/TestMac-Bridging-Header.h";

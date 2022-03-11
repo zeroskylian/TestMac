@@ -20,7 +20,11 @@ class TestWindowManager: NSWindowController {
     }
     
     override func newWindowForTab(_ sender: Any?) {
-        super.newWindowForTab(sender)
-        print(sender)
+//        super.newWindowForTab(sender)
+        let windowController = self.storyboard?.instantiateInitialController() as? TestWindowManager
+        let window = windowController?.window
+        window?.windowController = self
+        guard let window = window else { return }
+        self.window?.addTabbedWindow(window, ordered: .above)
     }
 }
