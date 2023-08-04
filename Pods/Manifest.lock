@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (5.5.0)
-  - AnyCodable-FlightSchool (0.6.2)
-  - Kingfisher (7.2.0)
-  - SnapKit (5.0.1)
-  - SwiftSoup (2.3.8)
+  - Alamofire (5.7.1)
+  - AnyCodable-FlightSchool (0.6.7)
+  - Kingfisher (7.8.1)
+  - SnapKit (5.6.0)
+  - SwiftSoup (2.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -21,12 +21,12 @@ SPEC REPOS:
     - SwiftSoup
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
-  AnyCodable-FlightSchool: ac75ed9bae659e16a41ebfa6c71a663d6f2c111c
-  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftSoup: ba8ea2c91151881a298cba4b0628ef31e835a77f
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
+  Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
 
 PODFILE CHECKSUM: 0b848f67a50ad25b9527172923b9df488b479f90
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.12.1

@@ -38,7 +38,9 @@ class ViewController: NSViewController {
     var subscriptions = Set<AnyCancellable>()
     
     let queue = OperationQueue()
+    
     var iv = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +50,7 @@ class ViewController: NSViewController {
             print(self.pg.doubleValue)
         }.fire()
         self.pg.startAnimation(nil)
+        print(FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask))
     }
 
     func addPb() {
