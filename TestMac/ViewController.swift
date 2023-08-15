@@ -11,124 +11,200 @@ import Kingfisher
 
 class ViewController: NSViewController {
     
-    @IBOutlet weak var dd: NSSearchField! {
-        didSet {
-            dd.borderColor = NSColor.red
-            dd.borderWidth = 2
-        }
-    }
+    var haveCSV: Bool = false
     
-    @IBOutlet weak var fff: NSTextField! {
-        didSet {
-            fff.borderColor = NSColor.red
-            fff.borderWidth = 2
-            
-            let attachment = NSTextAttachment(data: Data(), ofType: nil)
-            attachment.attachmentCell = HLChatHistorySearchDateCell()
-            let attributeString = NSMutableAttributedString(attachment: attachment)
-            fff.attributedStringValue = attributeString
-        }
-    }
+    var csvDict: [String: String] = [:]
+    
+    var haveString: Bool = false
+    
+    var stringDict: [StringModel] = []
     
     
-    @IBOutlet weak var pg: NSProgressIndicator!
+    @IBOutlet weak var xlsName: NSTextField!
     
-    let publisher = PassthroughSubject<Date,Never>()
-    
-    var subscriptions = Set<AnyCancellable>()
-    
-    let queue = OperationQueue()
-    
-    var iv = 0
+    @IBOutlet weak var stringsLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            self.iv += 1
-            self.pg.doubleValue = Double(self.iv * 10)
-            print(self.pg.doubleValue)
-        }.fire()
-        self.pg.startAnimation(nil)
-        print(FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask))
-    }
-
-    func addPb() {
-        publisher.throttle(for: .milliseconds(500), scheduler: DispatchQueue.main, latest: false).sink { finish in
-            print(finish)
-        } receiveValue: { date in
-            print("throttle:\t" + "\(date.timeIntervalSince1970)")
-        }.store(in: &subscriptions)
     }
     
     @IBAction func buttonClick(_ sender: Any) {
-        publisher.send(Date())
-        
-//        self.view.window?.windowController?.newWindowForTab(nil)
+        let openPanel = NSOpenPanel()
+        openPanel.title = "文件选择"
+        openPanel.canChooseFiles = true
+        openPanel.canCreateDirectories = false
+        openPanel.allowsMultipleSelection = false
+        openPanel.beginSheetModal(for: view.window!) { response in
+            if response == .OK {
+                guard let url = openPanel.url else { return }
+                self.readCSV(url: url)
+            }
+        }
     }
+    
+    func readCSV(url: URL) {
+        do {
+            var dataArray = [[String]]()
+            let data = try Data(contentsOf: url)
+            let dataEncoded = String(data: data, encoding: .utf8)
+            if let dataArr = dataEncoded?.components(separatedBy: "\r\n").map({ $0.components(separatedBy: ";") }) {
+                for line in dataArr {
+                    dataArray.append(line)
+                }
+            }
+        
+            var dict: [String: String] = [:]
+            for value in dataArray {
+                guard let first = value.first else { continue }
+                print(first)
+                let arr = first.components(separatedBy: ",")
+                guard arr.count > 1 else { continue }
+                let last = Array(arr.dropFirst())
+                dict[arr[0]] = last.joined()
+                
+            }
+            self.csvDict = dict
+            self.haveCSV = true
+            self.xlsName.stringValue = url.lastPathComponent
+        } catch {
+            print(error)
+        }
+    }
+    
+    @IBAction func readStringsAction(_ sender: Any) {
+        let openPanel = NSOpenPanel()
+        openPanel.title = "strings选择"
+        openPanel.canChooseFiles = true
+        openPanel.canCreateDirectories = false
+        openPanel.allowsMultipleSelection = false
+        openPanel.beginSheetModal(for: view.window!) { response in
+            if response == .OK {
+                guard let url = openPanel.url else { return }
+                self.readStrings(url: url)
+            }
+        }
+        
+    }
+    
+    func readStrings(url: URL) {
+        do {
+            var dataArray = [StringModel]()
+            let data = try Data(contentsOf: url)
+            let dataEncoded = String(data: data, encoding: .utf8)
+            if let dataArr = dataEncoded?.components(separatedBy: ";") {
+                var count: Int = 0
+                for line in dataArr {
+                    if let model = StringModel(string: line) {
+                        print(model.key)
+                        dataArray.append(model)
+                        count += 1
+                    }
+                }
+                print(count)
+            }
+            
+            self.stringDict = dataArray
+            self.haveString = true
+            self.stringsLabel.stringValue = url.lastPathComponent
+        } catch {
+            print(error)
+        }
+    }
+    
+    @IBAction func mergerAction(_ sender: Any) {
+        guard haveCSV, haveString else {
+            print(haveCSV, haveString)
+            return
+        }
+        var count: Int = 0
+        for model in stringDict {
+            if let value = csvDict[model.key] {
+                model.value = "\"\(value)\""
+                count += 1
+            }
+        }
+        print(count)
+        let strings = stringDict.reduce("") { partialResult, model in
+            return partialResult + model.toStrings()
+        }
+        
+        let data = strings.data(using: .utf8)
+        let savePanel = NSSavePanel()
+        savePanel.title = "保存"
+        savePanel.message = "保存文件"
+        savePanel.nameFieldStringValue = stringsLabel.stringValue
+        savePanel.begin { response in
+            guard let url = savePanel.url else { return }
+            if response == .OK {
+                do {
+                    try data?.write(to: url)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+    
     
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
     }
-    
 }
 
-class AppMainTabbarSearchField: NSSearchField {
+class StringModel: CustomStringConvertible {
     
-    var becomingFirstResponder: (() -> Void)?
+    let remark: String?
     
-    override func becomeFirstResponder() -> Bool {
-        becomingFirstResponder?()
-        return super.becomeFirstResponder()
-    }
-}
-public func check<P: Publisher>(_ title: String, publisher: () -> P) -> AnyCancellable {
-    print("----- \(title) -----")
-    defer { print("") }
-    return publisher()
-        .print()
-        .sink(
-            receiveCompletion: { _ in},
-            receiveValue: { _ in }
-        )
-}
-
-class HLChatHistorySearchDateCell: NSTextAttachmentCell {
+    let key: String
     
-    let label: NSLabel = {
-        let label = NSLabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = NSColor.black
-        label.isSelectable = false
-        label.layerBackgroundColor = NSColor.red
-        return label
-    }()
+    var value: String
     
-    override func cellSize() -> NSSize {
-        return CGSize(width: 50, height: 28)
+    init(remark: String?, key: String, value: String) {
+        self.remark = remark
+        self.key = key
+        self.value = value
     }
     
-    override var attachment: NSTextAttachment? {
-        didSet {
-//            label.text = "======="
-            title = "========"
+    init?(string: String) {
+        let array = string.trimmed.components(separatedBy: "\n")
+        guard array.count == 2 else { return nil }
+        let content = array[1].deletingSuffix(";")
+        let contentArray = content.components(separatedBy: " = ")
+        guard contentArray.count == 2 else { return nil }
+        self.remark = array.first
+        self.key = contentArray[0].deletingPrefix("\"").deletingSuffix("\"")
+        self.value = contentArray[1]
+    }
+    
+    func toStrings() -> String {
+        var string = ""
+        if let remark {
+            string.append(remark)
+            string.append("\n")
         }
+        string.append("\"\(key)\"")
+        string.append(" = ")
+        string.append("\(value)")
+        string.append(";\n\n")
+        return string
     }
     
-    override func draw(withFrame cellFrame: NSRect, in controlView: NSView?) {
-        super.draw(withFrame: cellFrame, in: controlView)
-        guard let controlView = controlView else { return }
-//        if controlView.subviews.contains(label) == false {
-//            controlView.addSubview(label)
-//        }
-        label.size = cellSize()
-        label.mm.x = cellFrame.minX
-        label.mm.y = 0
+    var description: String {
+        return "reamrk: \(remark ?? "") \nkey: \(key)\nvalue:\(value) \n ===="
+    }
+}
+
+extension String {
+    
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
     }
     
-    deinit {
-        label.removeFromSuperview()
+    func deletingSuffix(_ suffix: String) -> String {
+        guard self.hasSuffix(suffix) else { return self }
+        return String(dropLast(suffix.count))
     }
 }

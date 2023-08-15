@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -714,10 +714,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="741" height="547"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-dQ-gdc">
-                                <rect key="frame" x="189" y="339" width="75" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rfe-op-1rG">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-dQ-gdc">
+                                <rect key="frame" x="13" y="420" width="79" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="1gD-Vm-iWN"/>
+                                    <constraint firstAttribute="height" constant="20" id="aqC-0l-Nnh"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择xls" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rfe-op-1rG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -725,34 +728,63 @@
                                     <action selector="buttonClick:" target="XfG-lQ-9wD" id="xyh-8E-Qhg"/>
                                 </connections>
                             </button>
-                            <searchField wantsLayer="YES" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-kX-mtq">
-                                <rect key="frame" x="306" y="263" width="96" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="border" usesSingleLineMode="YES" id="QNP-9E-sLL">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-6F-ggE">
+                                <rect key="frame" x="123" y="429" width="21" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="xls" id="KvX-jZ-sl6">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                                </searchFieldCell>
-                            </searchField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wW-ji-h8k">
-                                <rect key="frame" x="306" y="173" width="96" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="M4Z-WQ-gUM">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <progressIndicator fixedFrame="YES" maxValue="100" doubleValue="30" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="DWh-r8-8fR">
-                                <rect key="frame" x="378" y="433" width="264" height="20"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wbw-Rd-d3W">
+                                <rect key="frame" x="13" y="360" width="106" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="7xv-kh-irc"/>
+                                    <constraint firstAttribute="height" constant="20" id="MPg-aq-LJ4"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择Strings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZwS-tp-VmL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="readStringsAction:" target="XfG-lQ-9wD" id="JQ0-ct-NtK"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-Oi-XMs">
+                                <rect key="frame" x="150" y="369" width="46" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="strings" id="GAy-5d-Hat">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeZ-n6-qXk">
+                                <rect key="frame" x="13" y="280" width="61" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
+                                <buttonCell key="cell" type="push" title="合并" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hjD-Q6-qmk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="mergerAction:" target="XfG-lQ-9wD" id="hfG-Cu-LiY"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="eiu-6F-ggE" firstAttribute="centerY" secondItem="kfC-dQ-gdc" secondAttribute="centerY" id="4XK-eb-uT4"/>
+                            <constraint firstItem="Ys9-Oi-XMs" firstAttribute="leading" secondItem="Wbw-Rd-d3W" secondAttribute="trailing" constant="40" id="7eE-iE-zBx"/>
+                            <constraint firstItem="kfC-dQ-gdc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Euo-D5-pvC"/>
+                            <constraint firstItem="kfC-dQ-gdc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="100" id="Fyc-r4-Fd6"/>
+                            <constraint firstAttribute="trailing" secondItem="eiu-6F-ggE" secondAttribute="trailing" constant="599" id="OnK-1E-hBy"/>
+                            <constraint firstItem="eiu-6F-ggE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kfC-dQ-gdc" secondAttribute="trailing" constant="8" symbolic="YES" id="TVb-T5-3YN"/>
+                            <constraint firstItem="Wbw-Rd-d3W" firstAttribute="leading" secondItem="kfC-dQ-gdc" secondAttribute="leading" id="gt8-pH-IFq"/>
+                            <constraint firstItem="Ys9-Oi-XMs" firstAttribute="centerY" secondItem="Wbw-Rd-d3W" secondAttribute="centerY" id="sNt-fc-0Ko"/>
+                            <constraint firstItem="Wbw-Rd-d3W" firstAttribute="top" secondItem="kfC-dQ-gdc" secondAttribute="bottom" constant="40" id="yxB-Hq-tAQ"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="dd" destination="7xt-kX-mtq" id="H9b-m2-G86"/>
-                        <outlet property="fff" destination="2wW-ji-h8k" id="GHX-cG-cBb"/>
-                        <outlet property="pg" destination="DWh-r8-8fR" id="4ol-km-BXO"/>
+                        <outlet property="stringsLabel" destination="Ys9-Oi-XMs" id="Uo2-59-6u4"/>
+                        <outlet property="xlsName" destination="eiu-6F-ggE" id="YUB-kM-1El"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
