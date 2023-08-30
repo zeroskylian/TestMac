@@ -10,4 +10,6 @@ target 'TestMac' do
   pod 'Alamofire'
   pod 'AnyCodable-FlightSchool'
   pod 'SwiftSoup'
+  
+  pod 'SWXMLHash'
 end

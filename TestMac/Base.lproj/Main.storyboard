@@ -737,12 +737,12 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wbw-Rd-d3W">
-                                <rect key="frame" x="13" y="360" width="106" height="32"/>
+                                <rect key="frame" x="13" y="360" width="90" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="7xv-kh-irc"/>
                                     <constraint firstAttribute="height" constant="20" id="MPg-aq-LJ4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="选择Strings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZwS-tp-VmL">
+                                <buttonCell key="cell" type="push" title="选择XML" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZwS-tp-VmL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -751,19 +751,18 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-Oi-XMs">
-                                <rect key="frame" x="150" y="369" width="46" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="strings" id="GAy-5d-Hat">
+                                <rect key="frame" x="134" y="369" width="32" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="XML" id="GAy-5d-Hat">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeZ-n6-qXk">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qeZ-n6-qXk">
                                 <rect key="frame" x="13" y="280" width="61" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="合并" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hjD-Q6-qmk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="mergerAction:" target="XfG-lQ-9wD" id="hfG-Cu-LiY"/>
@@ -772,10 +771,12 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="eiu-6F-ggE" firstAttribute="centerY" secondItem="kfC-dQ-gdc" secondAttribute="centerY" id="4XK-eb-uT4"/>
+                            <constraint firstItem="qeZ-n6-qXk" firstAttribute="leading" secondItem="Wbw-Rd-d3W" secondAttribute="leading" id="67z-io-UmM"/>
                             <constraint firstItem="Ys9-Oi-XMs" firstAttribute="leading" secondItem="Wbw-Rd-d3W" secondAttribute="trailing" constant="40" id="7eE-iE-zBx"/>
                             <constraint firstItem="kfC-dQ-gdc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Euo-D5-pvC"/>
                             <constraint firstItem="kfC-dQ-gdc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="100" id="Fyc-r4-Fd6"/>
                             <constraint firstAttribute="trailing" secondItem="eiu-6F-ggE" secondAttribute="trailing" constant="599" id="OnK-1E-hBy"/>
+                            <constraint firstItem="qeZ-n6-qXk" firstAttribute="top" secondItem="Wbw-Rd-d3W" secondAttribute="bottom" constant="60" id="P7k-8y-17C"/>
                             <constraint firstItem="eiu-6F-ggE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kfC-dQ-gdc" secondAttribute="trailing" constant="8" symbolic="YES" id="TVb-T5-3YN"/>
                             <constraint firstItem="Wbw-Rd-d3W" firstAttribute="leading" secondItem="kfC-dQ-gdc" secondAttribute="leading" id="gt8-pH-IFq"/>
                             <constraint firstItem="Ys9-Oi-XMs" firstAttribute="centerY" secondItem="Wbw-Rd-d3W" secondAttribute="centerY" id="sNt-fc-0Ko"/>

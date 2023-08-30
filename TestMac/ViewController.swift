@@ -8,6 +8,7 @@
 import Cocoa
 import Combine
 import Kingfisher
+import SWXMLHash
 
 class ViewController: NSViewController {
     
@@ -88,22 +89,11 @@ class ViewController: NSViewController {
     
     func readStrings(url: URL) {
         do {
-            var dataArray = [StringModel]()
             let data = try Data(contentsOf: url)
-            let dataEncoded = String(data: data, encoding: .utf8)
-            if let dataArr = dataEncoded?.components(separatedBy: ";") {
-                var count: Int = 0
-                for line in dataArr {
-                    if let model = StringModel(string: line) {
-                        print(model.key)
-                        dataArray.append(model)
-                        count += 1
-                    }
-                }
-                print(count)
-            }
-            
-            self.stringDict = dataArray
+            guard let dataEncoded = String(data: data, encoding: .utf8) else { return }
+            let xml = XMLHash.parse(dataEncoded)
+            let strings: [StringModel] = try xml["resources"]["string"].value()
+            self.stringDict = strings
             self.haveString = true
             self.stringsLabel.stringValue = url.lastPathComponent
         } catch {
@@ -118,16 +108,17 @@ class ViewController: NSViewController {
         }
         var count: Int = 0
         for model in stringDict {
-            if let value = csvDict[model.key] {
-                model.value = "\"\(value)\""
+            if let value = csvDict[model.value] {
+                model.value = value
                 count += 1
             }
         }
         print(count)
-        let strings = stringDict.reduce("") { partialResult, model in
-            return partialResult + model.toStrings()
-        }
         
+        var strings = stringDict.reduce("") { partialResult, model in
+            return partialResult + model.toXML()
+        }
+        strings = "<resources>\(strings)</resources>"
         let data = strings.data(using: .utf8)
         let savePanel = NSSavePanel()
         savePanel.title = "保存"
@@ -153,46 +144,29 @@ class ViewController: NSViewController {
     }
 }
 
-class StringModel: CustomStringConvertible {
-    
-    let remark: String?
+final class StringModel: CustomStringConvertible, XMLObjectDeserialization {
     
     let key: String
     
     var value: String
     
-    init(remark: String?, key: String, value: String) {
-        self.remark = remark
+    init(key: String, value: String) {
         self.key = key
         self.value = value
     }
     
-    init?(string: String) {
-        let array = string.trimmed.components(separatedBy: "\n")
-        guard array.count == 2 else { return nil }
-        let content = array[1].deletingSuffix(";")
-        let contentArray = content.components(separatedBy: " = ")
-        guard contentArray.count == 2 else { return nil }
-        self.remark = array.first
-        self.key = contentArray[0].deletingPrefix("\"").deletingSuffix("\"")
-        self.value = contentArray[1]
-    }
-    
-    func toStrings() -> String {
-        var string = ""
-        if let remark {
-            string.append(remark)
-            string.append("\n")
-        }
-        string.append("\"\(key)\"")
-        string.append(" = ")
-        string.append("\(value)")
-        string.append(";\n\n")
-        return string
-    }
-    
     var description: String {
-        return "reamrk: \(remark ?? "") \nkey: \(key)\nvalue:\(value) \n ===="
+        return "key: \(key)\nvalue:\(value) \n ===="
+    }
+    
+    func toXML() -> String {
+        return "<string name=\"\(key)\">\(value)</string>"
+    }
+    
+    static func deserialize(_ node: XMLIndexer) throws -> StringModel {
+        return try StringModel(
+            key: node.value(ofAttribute: "name"), value: node.value()
+        )
     }
 }
 
