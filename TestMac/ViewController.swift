@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     
     var stringDict: [StringModel] = []
     
+    var mergerDict: [String: String] = [:]
     
     @IBOutlet weak var xlsName: NSTextField!
     
@@ -107,15 +108,19 @@ class ViewController: NSViewController {
             return
         }
         var count: Int = 0
+        var save: [StringModel] = []
         for model in stringDict {
             if let value = csvDict[model.value] {
+                mergerDict[model.value] = value
                 model.value = value
                 count += 1
+                save.append(model)
+                mergerDict[model.value] = value
             }
         }
         print(count)
         
-        var strings = stringDict.reduce("") { partialResult, model in
+        var strings = save.reduce("") { partialResult, model in
             return partialResult + model.toXML()
         }
         strings = "<resources>\(strings)</resources>"
@@ -136,6 +141,41 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func exportUnmerger(_ sender: Any) {
+        var dict: [String: String] = [:]
+        print(mergerDict.count)
+        print(csvDict.count)
+        var count: Int = 0
+        csvDict.forEach({ (key, value) in
+            if mergerDict[value] == nil {
+                dict[key] = value
+                count += 1
+            }
+        })
+        print(count)
+        var csvString = "\("Key"),\("Value")\n\n"
+        for row in dict {
+            let string = "\(String(describing: row.0)) ,\(String(describing: row.1))\n"
+            csvString.append(string)
+            csvString.append("\n")
+        }
+        
+        let data = csvString.data(using: .utf8)
+        let savePanel = NSSavePanel()
+        savePanel.title = "保存"
+        savePanel.message = "保存文件"
+        savePanel.nameFieldStringValue = "unmerger.csv"
+        savePanel.begin { response in
+            guard let url = savePanel.url else { return }
+            if response == .OK {
+                do {
+                    try data?.write(to: url)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
     
     override var representedObject: Any? {
         didSet {
@@ -144,7 +184,7 @@ class ViewController: NSViewController {
     }
 }
 
-final class StringModel: CustomStringConvertible, XMLObjectDeserialization {
+final class StringModel: CustomStringConvertible, XMLObjectDeserialization, Equatable {
     
     let key: String
     
@@ -168,6 +208,11 @@ final class StringModel: CustomStringConvertible, XMLObjectDeserialization {
             key: node.value(ofAttribute: "name"), value: node.value()
         )
     }
+    
+    static func == (lhs: StringModel, rhs: StringModel) -> Bool {
+        return lhs.key == rhs.key
+    }
+    
 }
 
 extension String {

@@ -768,6 +768,17 @@
                                     <action selector="mergerAction:" target="XfG-lQ-9wD" id="hfG-Cu-LiY"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-K5-xN7">
+                                <rect key="frame" x="7" y="201" width="88" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="导出剩余" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rwe-wW-hzy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="exportUnmerger:" target="XfG-lQ-9wD" id="xgN-TM-Zvs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="eiu-6F-ggE" firstAttribute="centerY" secondItem="kfC-dQ-gdc" secondAttribute="centerY" id="4XK-eb-uT4"/>
